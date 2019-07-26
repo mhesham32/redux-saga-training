@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Container, Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { increment } from './actions/test';
 import './App.css';
 
-function App() {
+function App({ increment, state: { count } }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="app-container">
+        <Container>
+          <Row>
+            <Col>1 of 2</Col>
+            <Col>2 of 2</Col>
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default connect(
+  ({ state }) => ({ state }),
+  { increment }
+)(App);
