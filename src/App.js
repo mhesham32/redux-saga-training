@@ -5,27 +5,6 @@ import CartHeader from './CartHeader';
 import CartItems from './CartItems';
 import CheckoutSection from './CheckoutSection';
 
-const data = [
-  {
-    title: 'Shopping Item',
-    quantity: 3,
-    price: 50,
-    description: 'very good Item for every use case'
-  },
-  {
-    title: 'Shopping Item',
-    quantity: 3,
-    price: 50,
-    description: 'very good Item for every use case'
-  },
-  {
-    title: 'Shopping Item',
-    quantity: 3,
-    price: 50,
-    description: 'very good Item for every use case'
-  }
-];
-
 function App() {
   return (
     <div className="wrapper">
@@ -34,7 +13,7 @@ function App() {
           <Row>
             <Col xs={12} md={6}>
               <CartHeader />
-              <CartItems items={data} />
+              <CartItems />
             </Col>
             <Col xs={12} md={6}>
               <CheckoutSection />

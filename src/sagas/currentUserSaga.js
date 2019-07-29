@@ -18,5 +18,4 @@ export function* currentUserSaga() {
     yield put(setUserFailed());
   }
   yield put(setUserSucceded(data));
-  console.log({ data });
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
+import formatMoney from './helpers/formatMoney';
 
-const Item = ({ title, description, quantity, price }) => {
+const Item = ({ name, description, quantity, usd }) => {
   return (
     <div className="item">
-      <h5>{title}</h5>
+      <h5>{name}</h5>
       <p>
-        ${price}
+        {/* convert to cnets for the helper func */}
+        {formatMoney(usd * 100 * quantity)}
         <br />
         {description}
       </p>
