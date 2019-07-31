@@ -17,7 +17,15 @@ export {
   setCartItemsFailed,
   setCartItemsSucceeded,
   getCartItems,
-  GET_CART_ITEMS
+  GET_CART_ITEMS,
+  setShipping,
+  setTaxRate,
+  SET_SHIPPING,
+  SET_TAX_RATE,
+  SHIPPING_FETCHED,
+  SHIPPING_FETCHING,
+  CHECKOUT_AVAILABILITY,
+  setCheckoutAvailability
 } from './cart';
 
 export {

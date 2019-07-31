@@ -4,8 +4,7 @@ import {
   DECREASE_ITEM_QUANTITY,
   decreaseItemQuantity,
   setItemBusy,
-  setItemFree,
-  SET_CURRENT_USER_SUCCEDED
+  setItemFree
 } from '../actions';
 import { currentUserSelector } from '../selectors/currentUserSelector';
 

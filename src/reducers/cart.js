@@ -6,7 +6,12 @@ import {
   ITEM_QUANTITY_FETCHED,
   ITEM_QUANTITY_FETCHING,
   INCREASE_ITEM_QUANTITY,
-  DECREASE_ITEM_QUANTITY
+  DECREASE_ITEM_QUANTITY,
+  SHIPPING_FETCHING,
+  SHIPPING_FETCHED,
+  SET_SHIPPING,
+  SET_TAX_RATE,
+  CHECKOUT_AVAILABILITY
 } from '../actions';
 
 import { itemQuantity } from '../helpers/itemQuantity';
@@ -15,9 +20,14 @@ const INITIAL_STATE = {
   itemsCount: 0,
   items: [],
   userItems: [],
-  loading: false,
+  loading: true,
   error: false,
-  busyItem: null
+  busyItem: null,
+  subTotal: 0,
+  shippingCost: 0,
+  taxRate: 0,
+  shippingFetching: true,
+  checkOutAvilability: false
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -73,6 +83,32 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         userItems: itemQuantity(state.userItems, action.id, 'decrease')
       };
+    case SHIPPING_FETCHING:
+      return {
+        ...state,
+        shippingFetching: true
+      };
+    case SHIPPING_FETCHED:
+      return {
+        ...state,
+        shippingFetching: false
+      };
+    case SET_SHIPPING:
+      return {
+        ...state,
+        shippingCost: action.shippingCost
+      };
+    case SET_TAX_RATE:
+      return {
+        ...state,
+        taxRate: action.taxRate
+      };
+    case CHECKOUT_AVAILABILITY:
+      return {
+        ...state,
+        checkOutAvilability: action.isAvailable
+      };
+
     default:
       return state;
   }
