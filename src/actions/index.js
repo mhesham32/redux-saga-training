@@ -19,3 +19,14 @@ export {
   getCartItems,
   GET_CART_ITEMS
 } from './cart';
+
+export {
+  ITEM_QUANTITY_FETCHED,
+  ITEM_QUANTITY_FETCHING,
+  INCREASE_ITEM_QUANTITY,
+  DECREASE_ITEM_QUANTITY,
+  increaseItemQuantity,
+  decreaseItemQuantity,
+  setItemBusy,
+  setItemFree
+} from './item';

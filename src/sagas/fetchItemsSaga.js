@@ -24,5 +24,4 @@ export function* fetchItemsSaga() {
   } else {
     yield put(setCartItemsFailed());
   }
-  console.log({ items });
 }

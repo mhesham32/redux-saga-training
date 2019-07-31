@@ -11,7 +11,7 @@ const CartItems = ({ userItems, loading, error }) => {
       {userItems
         ? userItems.map((item, i) =>
             loading ? (
-              <div className="ite">
+              <div key={`spinner-${i}`} className="ite">
                 <Spinner animation="border" />
               </div>
             ) : (
