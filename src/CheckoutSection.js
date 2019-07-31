@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import formatMoney from './helpers/formatMoney';
+import { checkout } from './actions';
 
 const CheckoutSection = ({
   subTotal,
@@ -10,11 +11,17 @@ const CheckoutSection = ({
   shippingCost,
   total,
   taxes,
-  checkOutAvilability
+  checkOutAvilability,
+  checkout
 }) => {
   return (
     <section className="checkout">
-      <Button variant="dark" size="lg" disabled={!checkOutAvilability}>
+      <Button
+        variant="dark"
+        size="lg"
+        disabled={!checkOutAvilability}
+        onClick={checkout}
+      >
         Check Out
       </Button>
       <h3>Order Summary</h3>
@@ -80,14 +87,17 @@ const mapStateToProps = ({ cart }) => {
   }
 
   return {
-    subTotal: subTotal * 100,
-    shippingCost: shippingCost * 100,
-    taxes: taxes * 100,
+    subTotal: subTotal,
+    shippingCost: shippingCost,
+    taxes: taxes,
     subTotalFetching: cart.loading,
     shippingFetching: cart.shippingFetching,
-    total: total * 100,
+    total: total,
     checkOutAvilability: cart.checkOutAvilability
   };
 };
 
-export default connect(mapStateToProps)(CheckoutSection);
+export default connect(
+  mapStateToProps,
+  { checkout }
+)(CheckoutSection);

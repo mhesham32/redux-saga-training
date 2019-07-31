@@ -38,3 +38,14 @@ export {
   setItemBusy,
   setItemFree
 } from './item';
+
+export {
+  setCheckoutPhase,
+  CHECK_OUT,
+  VALIDATE_CARD_PHASE,
+  VALIDATE_CART_PHASE,
+  FINALIZATION_PHASE,
+  SUCCESS_PHASE,
+  ERROR_PHASE,
+  checkout
+} from './checkout';

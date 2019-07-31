@@ -18,8 +18,7 @@ const Item = ({
     <div className="item">
       <h5>{name}</h5>
       <p>
-        {/* convert to cents for the helper func */}
-        {formatMoney(usd * 100 * quantity)}
+        {formatMoney(usd * quantity)}
         <br />
         {description}
       </p>
