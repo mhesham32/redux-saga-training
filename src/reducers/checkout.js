@@ -49,7 +49,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         error: true,
         loading: false,
-        message: 'Funds on your card were insufficient or na Error occurred.'
+        message: 'Funds on your card were insufficient or an Error occurred.'
       };
     default:
       return state;
